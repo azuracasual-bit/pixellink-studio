@@ -29,13 +29,12 @@ Stop paying $39/month for SaaS link shorteners. **PixelLink Studio** lets you sh
 
 ### Option 2: Run with Docker
 ```bash
-git clone [https://github.com/azuracasual-bit/pixellink-studio.git](https://github.com/azuracasual-bit/pixellink-studio.git)
+git clone git clone https://github.com/azuracasual-bit/pixellink-studio.git
 cd pixellink-studio
 docker build -t pixellink-studio .
 docker run -d -p 3000:3000 pixellink-studio
 
 Option 3: Run with Node.js
-git clone [https://github.com/azuracasual-bit/pixellink-studio.git](https://github.com/azuracasual-bit/pixellink-studio.git)
+git clone git clone https://github.com/azuracasual-bit/pixellink-studio.git
 cd pixellink-studio
 npm install
-npm start<img width="1919" height="1074" alt="7feee765-c05a-4438-a29d-b1d045bef5cd" src="https://github.com/user-attachments/assets/479572f8-addd-4138-b32c-76cf72613ad3" />
