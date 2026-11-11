@@ -1,0 +1,17 @@
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Runtime link data
+links-db.json
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

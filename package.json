@@ -1,19 +1,29 @@
 {
   "name": "pixellink-studio",
   "version": "1.0.0",
-  "description": "Self-hosted Retargeting Link Shortener & QR Studio with Meta, TikTok & GTM Pixel Injection.",
+  "description": "Self-hosted short links, QR codes, and marketing-pixel redirect pages.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "keywords": [
     "url-shortener",
-    "pixel-tracker",
-    "qr-generator",
+    "qr-code",
     "marketing",
-    "self-hosted"
+    "self-hosted",
+    "meta-pixel",
+    "tiktok-pixel",
+    "google-tag-manager"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azuracasual-bit/pixellink-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azuracasual-bit/pixellink-studio/issues"
+  },
+  "homepage": "https://github.com/azuracasual-bit/pixellink-studio#readme",
   "dependencies": {
     "express": "^4.19.2"
   },
