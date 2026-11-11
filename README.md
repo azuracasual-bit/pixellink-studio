@@ -1,58 +1,69 @@
 # ⚡ PixelLink Studio
-**Self-Hosted Retargeting Link Shortener & Instant QR Code Platform for Marketers, Agencies, and E-Commerce Brands.**
 
-Stop paying $39/month for SaaS link shorteners. **PixelLink Studio** lets you shorten URLs, inject **Meta Pixel**, **TikTok Pixel**, and **Google Tag Manager** directly into your short links, and generate downloadable high-res QR codes on your own domain.
+**Self-hosted link shortener and QR-code studio for marketers, agencies, and e-commerce teams.**
 
-[![Deploy to Hostinger](https://img.shields.io/badge/Deploy_to_Hostinger-673DE6?style=for-the-badge&logo=hostinger&logoColor=white)](https://www.hostinger.com/eg?REFERRALCODE=8GUAZURACTML))
+Create short links, generate QR codes, and add Meta Pixel, TikTok Pixel, or Google Tag Manager IDs to a redirect page. PixelLink Studio is a lightweight Node.js application that stores links in a local JSON file.
+
+[![Deploy to Hostinger](https://img.shields.io/badge/Deploy_to_Hostinger-673DE6?style=for-the-badge&logo=hostinger&logoColor=white)](https://www.hostinger.com/eg?REFERRALCODE=8GUAZURACTML)
 
 ---
 
 ## 🖥️ Studio Interface
 
-<img width="1919" height="1074" alt="7feee765-c05a-4438-a29d-b1d045bef5cd" src="https://github.com/user-attachments/assets/70226db4-4f01-40e3-80b9-1f44b15791e9" />
+<img width="1919" height="1074" alt="PixelLink Studio interface" src="https://github.com/user-attachments/assets/70226db4-4f01-40e3-80b9-1f44b15791e9" />
 
 ---
 
-## ✨ Key Features
-* **Retargeting Pixel Injection:** Fire Meta Pixel, TikTok Pixel, and GTM events automatically before redirecting users to any destination (Amazon, WhatsApp, Instagram, or your store).
-* **Instant High-Res QR Studio:** Generate and download PNG QR codes for packaging, flyers, and offline retail.
-* **Real-Time Click Analytics:** Monitor active campaigns and total clicks from a minimalist dark-mode studio interface.
-* **Zero External Database Required:** Lightweight JSON storage out of the box—no complex SQL configuration needed.
+## ✨ Features
+
+- **Short links:** Create random or custom aliases for destination URLs.
+- **Retargeting pixels:** Add Meta Pixel, TikTok Pixel, and Google Tag Manager IDs to redirect pages.
+- **QR codes:** Generate and download PNG QR codes for your short links.
+- **Basic click counts:** See the total clicks recorded for each link.
+- **Lightweight storage:** Stores link data in `links-db.json`; no external database is required.
+
+## ⚠️ Before deploying publicly
+
+This version does **not** include admin authentication or access control. Its link-management API is available to visitors who can reach the app, so do not expose it to the public internet with real campaigns or sensitive links until authentication and authorization have been added. The JSON file is also intended for small, single-instance deployments; make sure its data is persisted and backed up when using Docker.
 
 ---
 
-## 🚀 Quick Deployment (Docker / Node.js)
+## 🚀 Run with Docker
 
-### Option 1: One-Click Cloud Hosting (Recommended)
-1. Get a Cloud or VPS instance on [Hostinger](https://www.hostinger.com/eg?REFERRALCODE=8GUAZURACTML).
-2. Pull this repository or deploy directly using the included `Dockerfile`.
-
-### Option 2: Run with Docker
 ```bash
-git clone git clone https://github.com/azuracasual-bit/pixellink-studio.git
+git clone https://github.com/azuracasual-bit/pixellink-studio.git
 cd pixellink-studio
 docker build -t pixellink-studio .
-docker run -d -p 3000:3000 pixellink-studio
+docker run --rm -p 3000:3000 pixellink-studio
+```
 
-Option 3: Run with Node.js
-git clone git clone https://github.com/azuracasual-bit/pixellink-studio.git
+Open [http://localhost:3000](http://localhost:3000).
+
+> Link data is written to `links-db.json` inside the container. The command above does not persist that file after the container is removed. Configure persistent storage and backups before relying on Docker deployments.
+
+## 🟢 Run with Node.js
+
+Requires Node.js 18 or newer.
+
+```bash
+git clone https://github.com/azuracasual-bit/pixellink-studio.git
 cd pixellink-studio
 npm install
+npm start
+```
 
-🚀 Version 2.0 Roadmap
+Then open [http://localhost:3000](http://localhost:3000). Set the `PORT` environment variable to use a port other than `3000`.
 
-PixelLink Studio v2 is planned to include:
+## 🗺️ Roadmap
 
-• Secure Admin Authentication (Login & Access Control)
-• Custom Domains Support
-• Advanced Analytics Dashboard
-• Country, Device & Browser Tracking
-• UTM Campaign Builder
-• Password-Protected Smart Links
-• Link Expiration Rules
-• SQLite/PostgreSQL Database Support
-• Rate Limiting & Enhanced Security
-• Team & Multi-User Workspaces
-• Campaign Management Tools
-• Real-Time Performance Insights
-• Improved QR Code Customization
+Planned ideas for a future version include:
+
+- Admin authentication and access control
+- Custom domains
+- Expanded analytics, including country, device, and browser breakdowns
+- UTM campaign builder
+- Password-protected and expiring links
+- SQLite or PostgreSQL storage
+- Rate limiting
+- Team workspaces and campaign management
+- More QR-code customization
