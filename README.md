@@ -38,3 +38,21 @@ Option 3: Run with Node.js
 git clone git clone https://github.com/azuracasual-bit/pixellink-studio.git
 cd pixellink-studio
 npm install
+
+🚀 Version 2.0 Roadmap
+
+PixelLink Studio v2 is planned to include:
+
+• Secure Admin Authentication (Login & Access Control)
+• Custom Domains Support
+• Advanced Analytics Dashboard
+• Country, Device & Browser Tracking
+• UTM Campaign Builder
+• Password-Protected Smart Links
+• Link Expiration Rules
+• SQLite/PostgreSQL Database Support
+• Rate Limiting & Enhanced Security
+• Team & Multi-User Workspaces
+• Campaign Management Tools
+• Real-Time Performance Insights
+• Improved QR Code Customization
